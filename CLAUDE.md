@@ -70,3 +70,10 @@ All detailed rules live in `.claude/rules/`. Read the relevant file(s) **before*
 24. **`escapeHtml()` must decode `&amp;` FIRST** — canonical order: `&amp;` → `&`, then `&#x27;`, `&#039;`, `&quot;`, `&lt;`, `&gt;`, then re-encode
 25. **`.textContent` assignments must use `decodeEntities()`** — `.textContent` does not interpret HTML entities; `escapeHtml()` is for `.innerHTML` only
 26. **Required numeric profile fields — never reject `0` with truthiness** — e.g. `years_experience` in profile setup: `if (!value)` after `parseInt` fails for zero; use explicit empty/NaN checks. See `.claude/rules/frontend-js-strict.mdc` (“Required numeric fields”).
+
+<!-- harness:context:begin -->
+
+## Olorin harness
+
+This project runs in the Olorin harness. For goal-scale work — explicit goals, features, and multi-step fixes that end in a completion claim — follow `.harness/PROCESS.md`; questions, investigations, and single-edit changes are exempt. Run state lives in `.harness/runs/` (one journal per goal), with the active pointer in `.harness/STATE.md`. Self-improvement (`.harness/SELF-IMPROVE.md`) is part of every goal, not an optional extra.
+<!-- harness:context:end -->
